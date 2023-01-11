@@ -1,6 +1,6 @@
 public class FirstClass {
     public static void main(String[] args) {
-        Notebook notebook = new Notebook(600, 400, 1990);
+        Notebook notebook = new Notebook(500, 400, 1990);
         System.out.println("Weight of light notebook: " + notebook.weight + " Price of light notebook: " + notebook.price);
         notebook.CheckPrice();
         notebook.CheckWeight();
