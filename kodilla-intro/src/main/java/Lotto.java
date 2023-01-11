@@ -4,21 +4,22 @@ class Lotto {
 
     public static void main(String args[]) {
 
-        System.out.println(getCountOfRandomNumber(10));
+        System.out.println(getCountOfRandomNumber(20));
 
     }
-    public static String getCountOfRandomNumber(int max) {
-        Random r = new Random();
+    public static int getCountOfRandomNumber(int max) {
+        Random random = new Random();
         int result = 0;
         int sum = 0;
         while (sum < max) {
-            int temp = r.nextInt(10);
-            System.out.println("Suma przed działaniem: " + sum);
+            int temp = random.nextInt(10);
+            System.out.print("Losowana liczba: "+ temp + " ");
             sum = sum + temp;
-            System.out.println("Suma po działaniu: " + sum);
-            result=result+1;
+            System.out.println("Wynik dodawania:" + sum);
+            result++;
         }
-        return String.valueOf(result);
+        System.out.print(" Ostatni wynik losowania: ");
+        return result;
     }
 }
 
