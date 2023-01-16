@@ -9,7 +9,7 @@ public class Notebook {
         this.year = year;
     }
 
-    public void CheckPrice() {
+    public void checkPrice() {
         if (this.price < 400) {
             System.out.println("This notebook is very cheap");
         } else if (this.price >= 400 && this.price <= 1000) {
@@ -19,7 +19,7 @@ public class Notebook {
         }
     }
 
-    public void CheckWeight() {
+    public void checkWeight() {
         if (this.weight < 600) {
             System.out.println("This item is lightweight");
         } else if (this.weight >= 600 && this.weight <= 1200) {
@@ -29,7 +29,7 @@ public class Notebook {
         }
     }
 
-    public void CheckYearAndPrice() {
+    public void checkYearAndWeight() {
         if (this.price >= 400 && this.price < 1000) {       //assuming there are no cheaper notebooks than 400. If there are leave only this.price<1000
             if (this.year >= 1990 && this.year < 2000) {
                 System.out.println("This one is OLD, CHEAP notebook");

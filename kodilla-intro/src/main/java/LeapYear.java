@@ -1,6 +1,6 @@
 class LeapYear {
     public static void main(String args[]) {
-        int myYear = 2020;
+        int myYear = -2000;
 
         if (myYear % 4 == 0 && myYear % 100 != 0) {
             System.out.println("To jest Rok przestępny");

@@ -2,21 +2,29 @@ import java.util.Random;
 
 public class Test {
     public static void main(String[] args) {
-
-
-        int wyswietlMetode = nazwaMetody(2);
-        System.out.println(wyswietlMetode);
-
-    }
-
-    public static int nazwaMetody(int number) {
-        int result = 0;
-        int multiply = 0;
-        for (int i = 1; i <= 10; i++) {
-            multiply = number * i;
-            System.out.println("Mnóż: " + i + " razy: " + number + " Równa się: " + multiply);
+        int ilosc_liczb = 5, i;
+        double liczba, suma = 0, min, max;
+        System.out.println("Program losuje " + ilosc_liczb + "liczb "
+                + "całkowitych od 0 do 99,");
+        System.out.println("a następnie znajduje najmniejszą i największą");
+        System.out.println("oraz oblicza średnia ze wszystkich wylosowanych liczb.");
+        Random r = new Random();
+        min = Math.round(100 * (r.nextDouble()));
+        System.out.println();
+        System.out.print("Wylosowano liczby: " + min + ", ");
+        max = min;
+        suma = suma + max;
+        for (i = 1; i <= ilosc_liczb - 1; i++) {
+            liczba = Math.round(100 * (r.nextDouble()));
+            System.out.print(liczba + ", ");
+            if (max < liczba) max = liczba;
+            if (liczba < min) min = liczba;
+            suma = suma + liczba;
         }
-        return result;
+        System.out.println();
+        System.out.println("największa liczba to " + max + ",");
+        System.out.println("najmniejsza liczba to " + min + ",");
+        System.out.println("średnia = " + suma / ilosc_liczb + ".");
     }
 }
 
