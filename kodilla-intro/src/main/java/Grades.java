@@ -21,12 +21,12 @@ public class Grades {
     }
 
     public double mean() {
-        int result = 0;
+        float result = 0;
         int sum = 0;
         for (int i = 0; i < grades.length ; i++) {
             sum = sum + grades[i];
         }
-        result = sum / size;
+        result = sum / grades.length;
         System.out.println(result);
         return result;
 
