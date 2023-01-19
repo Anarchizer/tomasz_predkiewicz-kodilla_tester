@@ -3,14 +3,13 @@ public class ShowGrades {
         Grades myGrades = new Grades();
 
 
-
-        myGrades.add(6);
-        myGrades.add(2);
         myGrades.add(6);
         myGrades.add(1);
         myGrades.add(2);
-        myGrades.add(6);
-        myGrades.add(2);
+        myGrades.add(1);
+        myGrades.add(1);
+        myGrades.add(4);
+        myGrades.add(1);
         myGrades.add(6);
         myGrades.add(1);
         myGrades.add(2);

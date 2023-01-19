@@ -1,6 +1,6 @@
 public class ShowBook {
     public static void main(String[] args) {
-        Book wyswietl = Book.of("Tolkien", "Władca Pierścieni");
-        System.out.print(wyswietl);
+        Book book = Book.of("Isaac Asimov", "The Galaxy");
+        System.out.println(book);
     }
 }

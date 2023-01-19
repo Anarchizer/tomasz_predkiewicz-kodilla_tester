@@ -9,9 +9,9 @@ public class Grades {
 
 //niezrozumiała metoda - do wyjasnienia
     public void add(int value) {
-        if (this.size == 10) {
-            return;
-        }
+//        if (this.size == 10) {
+//            return;
+//        }
         this.grades[size] = value;
         this.size++;
     }
@@ -21,13 +21,11 @@ public class Grades {
     }
 
     public double mean() {
-        float result = 0;
-        int sum = 0;
+        double result = 0;
         for (int i = 0; i < grades.length ; i++) {
-            sum = sum + grades[i];
+            result = result + grades[i];
         }
-        result = sum / grades.length;
-        System.out.println(result);
+        result = result/grades.length;
         return result;
 
     }

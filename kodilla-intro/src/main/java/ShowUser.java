@@ -9,7 +9,6 @@ public class ShowUser {
 
         User[] users = {anna, betty, carl, david, eva, frankie};
 
-
         int result = 0;
         int mean = 0;
         for (int i = 0; i < users.length; i++) {
@@ -17,7 +16,7 @@ public class ShowUser {
 
         }
         mean = result / users.length;
-        System.out.println("Avarage age: "+ mean);
+        System.out.println("Avarage age: " + mean);
         for (int c = 0; c < users.length; c++) {
             if (mean > users[c].getAge()) {
                 System.out.println(users[c].getName());
