@@ -7,11 +7,10 @@ public class Grades {
         this.size = 0;
     }
 
-//niezrozumiała metoda - do wyjasnienia
     public void add(int value) {
-//        if (this.size == 10) {
-//            return;
-//        }
+        if (this.size == 10) {
+            return;
+        }
         this.grades[size] = value;
         this.size++;
     }

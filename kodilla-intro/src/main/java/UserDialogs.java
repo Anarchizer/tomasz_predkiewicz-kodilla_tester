@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class UserDialogs {
     public static String getUsername() {
         Scanner scanner = new Scanner(System.in);
@@ -18,10 +19,14 @@ public class UserDialogs {
             System.out.println("Select calculation (A-add, S-subtract, D-divide, M-multiply):");
             String calc = scanner.nextLine().trim().toUpperCase();
             switch (calc) {
-                case "A": return "ADD";
-                case "S": return "SUB";
-                case "D": return "DIV";
-                case "M": return "MUL";
+                case "A":
+                    return "ADD";
+                case "S":
+                    return "SUB";
+                case "D":
+                    return "DIV";
+                case "M":
+                    return "MUL";
                 default:
                     System.out.println("Wrong calculation. Try again.");
             }

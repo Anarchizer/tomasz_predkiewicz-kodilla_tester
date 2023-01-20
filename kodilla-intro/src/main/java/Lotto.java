@@ -7,13 +7,14 @@ class Lotto {
         System.out.println(getCountOfRandomNumber(20));
 
     }
+
     public static int getCountOfRandomNumber(int max) {
         Random random = new Random();
         int result = 0;
         int sum = 0;
         while (sum < max) {
             int temp = random.nextInt(10);
-            System.out.print("Losowana liczba: "+ temp + " ");
+            System.out.print("Losowana liczba: " + temp + " ");
             sum = sum + temp;
             System.out.println("Wynik dodawania:" + sum);
             result++;
