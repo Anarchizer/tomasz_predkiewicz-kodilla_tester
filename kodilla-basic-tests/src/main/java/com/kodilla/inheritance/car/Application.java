@@ -1,4 +1,4 @@
-package com.kodilla.inheritance;
+package com.kodilla.inheritance.car;
 
 public class Application {
     public static void main(String[] args) {
