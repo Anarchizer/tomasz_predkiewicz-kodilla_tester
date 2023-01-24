@@ -2,16 +2,16 @@ package com.kodilla.basic_assertion;
 
 public class Calculator {
 
-    public int sum  (int a, int b){
+    public double sum  (double a, double b){
         return a + b;
     }
 
-    public int substract (int a, int b){
+    public double substract (double a, double b){
         return a - b;
     }
 
-    public double power (double a, double x){
-        return Math.pow(a, x);
+    public double power (double a){
+        return Math.pow(a,2);
     }
 
 }
