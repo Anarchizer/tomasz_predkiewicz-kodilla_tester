@@ -1,11 +1,8 @@
 package com.kodilla.basic_assertion;
 
 public class Application {
-
     public static void main(String[] args) {
-
         Calculator calculator = new Calculator();
-
         double a = 5;
         double b = 8;
 
@@ -17,8 +14,8 @@ public class Application {
             System.out.println("Metoda sum nie działa poprawnie dla liczb " + a + " i " + b);
         }
 
-        double substractResult = calculator.substract(a, b);
-        boolean correct2 = ResultChecker.assertEquals(-3, substractResult,0.001);
+        double subtractResult = calculator.subtract(a, b);
+        boolean correct2 = ResultChecker.assertEquals(-3, subtractResult,0.001);
             if(correct2){
             System.out.println("Metoda substract działa poprawnie dla liczb " + a + " i " + b);
         } else {

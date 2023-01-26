@@ -1,7 +1,6 @@
 package com.kodilla.basic_assertion;
 
 public class PrimeChecker {
-
     private int count;
 
     public boolean isPrime(int number) {
@@ -13,7 +12,6 @@ public class PrimeChecker {
                 return false;
             }
         }
-
         return true;
     }
 
