@@ -18,10 +18,10 @@ public class CalculatorTestSuite {
     @Test
     public void testSubstract() {
         Calculator calculator = new Calculator();
-        double a = 15;
-        double b = 8;
+        double a = 15.332;
+        double b = 8.1;
         double substractResult = calculator.substract(a, b);
-        assertEquals(7, substractResult);
+        assertEquals(7.232, substractResult, 0.001);
     }
 
     @Test

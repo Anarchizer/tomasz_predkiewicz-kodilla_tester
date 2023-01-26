@@ -18,7 +18,7 @@ public class Application {
         }
 
         double substractResult = calculator.substract(a, b);
-        boolean correct2 = ResultChecker.assertEquals(-3, substractResult, 0.001);
+        boolean correct2 = ResultChecker.assertEquals(-3, substractResult,0.001);
             if(correct2){
             System.out.println("Metoda substract działa poprawnie dla liczb " + a + " i " + b);
         } else {

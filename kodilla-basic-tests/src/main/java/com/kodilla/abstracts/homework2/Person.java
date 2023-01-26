@@ -12,6 +12,7 @@ public class Person {
         this.age = age;
         this.job = job;
     }
+
     public Job getJob() {
         return job;
     }

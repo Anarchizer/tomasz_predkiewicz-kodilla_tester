@@ -13,5 +13,4 @@ public class Calculator {
     public double power (double a){
         return Math.pow(a,2);
     }
-
 }
