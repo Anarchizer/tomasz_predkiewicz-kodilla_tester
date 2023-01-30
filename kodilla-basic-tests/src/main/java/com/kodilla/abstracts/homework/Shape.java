@@ -7,9 +7,9 @@ public abstract class Shape {
     public Shape(int sideLength){
         this.sideLength = sideLength;
     }
-    public abstract void surfaceArea();
+    public abstract double surfaceArea();
 
-    public abstract void circumference();
+    public abstract double circumference();
 
     public int getSideLength(int sideLength){
         return sideLength;

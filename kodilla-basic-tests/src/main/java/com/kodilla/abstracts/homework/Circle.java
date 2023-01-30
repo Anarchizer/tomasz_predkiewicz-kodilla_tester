@@ -7,12 +7,15 @@ public class Circle extends Shape{
     }
 
     @Override
-    public void surfaceArea() {
-        System.out.println("Pole koła wynosi: " + Math.PI * Math.pow(sideLength, 2));
+    public double surfaceArea() {
+        double circleSurfaceArea = + Math.PI * Math.pow(sideLength, 2);
+        return circleSurfaceArea;
     }
 
     @Override
-    public void circumference() {
-        System.out.println("Obwód koła wynosi: " + 2 * Math.PI * sideLength);
+    public double circumference() {
+        double circleCircumference = 2 * Math.PI * sideLength;
+        return circleCircumference;
+
     }
 }

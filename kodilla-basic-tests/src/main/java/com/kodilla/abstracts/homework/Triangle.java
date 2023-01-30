@@ -7,12 +7,14 @@ public class Triangle extends Shape{
     }
 
     @Override
-    public void surfaceArea() {
-        System.out.println("Pole trójkąta równobocznego wynosi: " + (sideLength * Math.pow(sideLength, 2)));
+    public double surfaceArea() {
+        double triangleSurfaceArea = (sideLength * Math.pow(sideLength, 2));
+        return triangleSurfaceArea;
     }
 
     @Override
-    public void circumference() {
-        System.out.println("Obwód trójkąta równobocznego wynosi: " + (sideLength + sideLength + sideLength));
+    public double circumference() {
+        double triangleCircumference = (sideLength + sideLength + sideLength);
+        return triangleCircumference;
     }
 }
