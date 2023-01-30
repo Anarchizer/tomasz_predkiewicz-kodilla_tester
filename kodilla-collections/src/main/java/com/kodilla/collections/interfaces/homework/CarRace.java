@@ -1,4 +1,4 @@
-package com.kodilla.interfaces.homework;
+package com.kodilla.collections.interfaces.homework;
 
 public class CarRace {
     public static void main(String[] args) {
@@ -9,13 +9,15 @@ public class CarRace {
         System.out.println("Aktualna prędkość Fiata: " + doRace(fiat) + "km/h");
         System.out.println("Aktualna prędkość Forda: "  + doRace(ford) + "km/h");
         System.out.println("Aktualna prędkość Opla: " + doRace(opel) + "km/h");
-
     }
 
     public static int doRace(Car car) {
-        int carSpeed = 0;
-        carSpeed = carSpeed + car.getSpeed();
+        car.increaseSpeed();
+        car.increaseSpeed();
+        car.increaseSpeed();
 
-        return carSpeed;
+        car.decreaseSpeed();
+        car.decreaseSpeed();
+        return car.getSpeed();
     }
 }
