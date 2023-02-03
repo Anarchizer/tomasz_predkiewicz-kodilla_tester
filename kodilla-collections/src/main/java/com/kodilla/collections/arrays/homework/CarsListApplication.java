@@ -19,6 +19,7 @@ public class CarsListApplication {
         for (Car rollCar : car) {
             CarUtils.describeCar(rollCar);
         }
+
         System.out.println(" ");
         System.out.println("Wymiar kolekcji Car to: " + car.size());
         System.out.println(" ");
