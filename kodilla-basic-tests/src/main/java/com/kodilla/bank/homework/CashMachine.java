@@ -1,22 +1,49 @@
 package com.kodilla.bank.homework;
 
 public class CashMachine {
-private int [] cashMachine1;
-private int[] cashMachine2;
-private int[] cashMachine3;
+    private int[]transactions;
+    private int size;
 
-public CashMachine(){
-    this.cashMachine1 = new int[]{1,2,3,4,5,6};
-    this.cashMachine2 = new int[]{1,2,3,4,5,6};
-    this.cashMachine3 = new int[]{1,2,3,4,5,6};
-}
 
-public int transactions (){
-    return cashMachine1.length + cashMachine2.length + cashMachine3.length;
-}
+    public CashMachine(){
+        this.transactions = new int [0];
+        this.size = 0;
+    }
 
-public int saldo(){
-    int saldo = 0;
-    return saldo;
-}
+    public void add (int value){
+        this.size++;
+        int [] newCashMachine = new int [this.size];
+        System.arraycopy(transactions,0,newCashMachine,0,transactions.length);
+        newCashMachine [this.size -1] = value;
+        this.transactions = newCashMachine;
+
+    }
+
+    public int[] getTransactions (){
+        return transactions;
+    }
+
+    public int numberOfTransactions(){
+        return transactions.length;
+    }
+
+    public int getSaldo(){
+        int saldo = 0;
+        for (int i = 0; i < transactions.length; i ++){
+            saldo = saldo + transactions[i];
+        }
+        return saldo;
+    }
+    public double getAveragePayments() {
+        if (this.transactions.length == 0) {
+            return 0;
+        }
+        double sum = 0;
+        for(int i = 0; i < this.transactions.length; i++) {
+            sum += this.transactions[i];
+        }
+        return sum/this.transactions.length;
+    }
+
+
 }

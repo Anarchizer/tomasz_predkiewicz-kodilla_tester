@@ -1,5 +1,7 @@
 package com.kodilla.collections.interfaces.homework;
 
+import java.util.Random;
+
 public class Fiat implements Car {
     int speed;
     public Fiat() {
@@ -13,12 +15,12 @@ public class Fiat implements Car {
     }
 
     @Override
-    public void increaseSpeed() {
-        speed = speed + 10;
+    public int increaseSpeed(int increase) {speed = speed + increase;
+        return increase;
     }
-
     @Override
     public void decreaseSpeed() {
-        speed = speed - 8;
+        speed = speed - 10;
     }
+
 }
