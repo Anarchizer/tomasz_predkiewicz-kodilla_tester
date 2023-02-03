@@ -15,7 +15,6 @@ public class CarsListApplication {
         Opel opel3 = new Opel();
         car.add(opel3);
 
-
         for (Car rollCar : car) {
             CarUtils.describeCar(rollCar);
         }
@@ -31,6 +30,7 @@ public class CarsListApplication {
             CarUtils.describeCar(rollCar1);
 
         }
+
         System.out.println(" ");
         System.out.println("Wymiar kolekcji Car to: " + car.size());
         System.out.println(" ");
