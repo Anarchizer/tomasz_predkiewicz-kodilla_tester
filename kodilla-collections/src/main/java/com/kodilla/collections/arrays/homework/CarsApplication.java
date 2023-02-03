@@ -6,7 +6,6 @@ import java.util.Random;
 
 
 public class CarsApplication {
-
     private static final Random RANDOM = new Random();
 
     public static void main(String[] args) {
@@ -15,7 +14,6 @@ public class CarsApplication {
             cars[i] = drawCar();
         for (Car car : cars)
             CarUtils.describeCar(car);
-
 
     }
 

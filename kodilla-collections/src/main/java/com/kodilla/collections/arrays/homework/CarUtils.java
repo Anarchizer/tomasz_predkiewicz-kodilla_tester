@@ -8,8 +8,6 @@ import com.kodilla.collections.interfaces.homework.Ford;
 import java.util.Random;
 
 public class CarUtils {
-
-
     public static void describeCar(Car car){
 
         System.out.println("---------------------------------------------");
