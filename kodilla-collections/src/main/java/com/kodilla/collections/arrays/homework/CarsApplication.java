@@ -23,16 +23,16 @@ public class CarsApplication {
         int drawnCarType = RANDOM.nextInt(3);
 
         if (drawnCarType == 0) {
-            Car fiat = new Fiat();
-            fiat.increaseSpeed(getIncreasedSpeed());
+            Fiat fiat = new Fiat();
+            fiat.increaseSpeed(RANDOM.nextInt(10));
             return fiat;
         } else if (drawnCarType == 1) {
-            Car ford = new Ford();
-            ford.increaseSpeed(getIncreasedSpeed());
+            Ford ford = new Ford();
+            ford.increaseSpeed(RANDOM.nextInt(10));
             return ford;
         } else {
-            Car opel = new Opel();
-            opel.increaseSpeed(getIncreasedSpeed());
+            Opel opel = new Opel();
+            opel.increaseSpeed(RANDOM.nextInt(10));
             return opel;
         }
     }
