@@ -8,10 +8,6 @@ public class School {
 
     private String SchoolName;
 
-    public String getSchoolName() {
-        return SchoolName;
-    }
-
     public School(String SchoolName, List<Double> students) {
         this.students = students;
         this.SchoolName = SchoolName;
@@ -23,6 +19,10 @@ public class School {
             sum = sum + student;
         }
         return sum;
+    }
+
+    public String getSchoolName() {
+        return SchoolName;
     }
 
     @Override
