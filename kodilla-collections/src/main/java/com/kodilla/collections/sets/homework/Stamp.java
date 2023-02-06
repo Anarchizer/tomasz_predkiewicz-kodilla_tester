@@ -31,7 +31,7 @@ public class Stamp {
         return width;
     }
 
-    public String isStamped() {
+    public String isItStamped() {
         if(height > 3){
             return stamped;
         } else return notStamped;
