@@ -1,13 +1,22 @@
 package com.kodilla.bank.homework;
 
 public class CashMachine {
+
+
     private int[]transactions;
     private int size;
-
 
     public CashMachine(){
         this.transactions = new int [0];
         this.size = 0;
+    }
+
+    public int[] getTransactions() {
+        return transactions;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public void add (int value){
@@ -17,10 +26,6 @@ public class CashMachine {
         newCashMachine [this.size -1] = value;
         this.transactions = newCashMachine;
 
-    }
-
-    public int[] getTransactions (){
-        return transactions;
     }
 
     public int numberOfTransactions(){
@@ -34,16 +39,26 @@ public class CashMachine {
         }
         return saldo;
     }
-    public double getAveragePayments() {
-        if (this.transactions.length == 0) {
-            return 0;
+
+    public int getPayIns(){
+        int payIns = 0;
+
+        for (int i = 0; i <transactions.length; i++) {
+            if(transactions[i] >= 0){
+                payIns = payIns + transactions[i];
+            }
         }
-        double sum = 0;
-        for(int i = 0; i < this.transactions.length; i++) {
-            sum += this.transactions[i];
-        }
-        return sum/this.transactions.length;
+        return payIns;
     }
 
+    public int getPayOuts(){
+        int payOuts = 0;
 
+        for (int i = 0; i <transactions.length; i++) {
+            if(transactions[i] <= 0){
+                payOuts = payOuts + transactions[i];
+            }
+        }
+        return payOuts;
+    }
 }
