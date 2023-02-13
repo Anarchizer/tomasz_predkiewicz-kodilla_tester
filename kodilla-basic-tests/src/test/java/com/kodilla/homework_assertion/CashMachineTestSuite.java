@@ -29,10 +29,66 @@ public class CashMachineTestSuite {
     @Test
     public void ShouldCalculateSaldo(){
         CashMachine cashmachine = new CashMachine();
-        cashmachine.add(22);
-        cashmachine.add(-22);
-        cashmachine.add(21);
+        cashmachine.add(-1000);
+        cashmachine.add(-999);
+        cashmachine.add(-1);
+        cashmachine.add(0);
+        cashmachine.add(4);
+        cashmachine.add(999);
+        cashmachine.add(1000);
 
-        assertEquals(21,cashmachine.getSaldo());
+        assertEquals(3,cashmachine.getSaldo());
+    }
+
+    @Test
+    public void ShouldGetPayIns(){
+        CashMachine cashmachine = new CashMachine();
+
+        cashmachine.add(22);
+        cashmachine.add(-14);
+        cashmachine.add(0);
+        cashmachine.add(999);
+        cashmachine.add(1000);
+
+        assertEquals(1021,cashmachine.getPayIns());
+    }
+
+    @Test
+    public void ShouldGetPayOuts(){
+        CashMachine cashmachine = new CashMachine();
+
+        cashmachine.add(22);
+        cashmachine.add(-14);
+        cashmachine.add(0);
+        cashmachine.add(-1000);
+        cashmachine.add(-999);
+
+        assertEquals(-1013,cashmachine.getPayOuts());
+    }
+
+    @Test
+    public void shouldGetNumberOfPayIns(){
+        CashMachine cashmachine = new CashMachine();
+
+        cashmachine.add(22);
+        cashmachine.add(-14);
+        cashmachine.add(0);
+        cashmachine.add(999);
+        cashmachine.add(1000);
+
+        assertEquals(2,cashmachine.getNumberOfPayIns());
+    }
+
+    @Test
+    public void shouldGetNumberOfPayOuts(){
+        CashMachine cashmachine = new CashMachine();
+
+        cashmachine.add(-1);
+        cashmachine.add(-14);
+        cashmachine.add(0);
+        cashmachine.add(-999);
+        cashmachine.add(-1000);
+
+        assertEquals(3,cashmachine.getNumberOfPayOuts());
     }
 }

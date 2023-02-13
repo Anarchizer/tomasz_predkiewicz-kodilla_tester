@@ -1,5 +1,8 @@
 package com.kodilla.bank.homework;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Bank {
     private CashMachine PKO;
     private CashMachine Paribas;
@@ -8,53 +11,68 @@ public class Bank {
 
     public Bank() {
 
-        this.PKO = new CashMachine();
-        this.Paribas = new CashMachine();
-        this.Nordea = new CashMachine();
-        this.banks = new CashMachine[]{PKO, Paribas, Nordea};
+        PKO = new CashMachine();
+        Paribas = new CashMachine();
+        Nordea = new CashMachine();
+        banks = new CashMachine[]{PKO, Paribas, Nordea};
     }
 
-    public int allSaldo() {
-        int saldoAll = 0;
-        for (int i = 0; i < banks.length; i++) {
-            saldoAll = saldoAll + banks[i].getSaldo();
+    public void addPKOTransactions(int transaction) {
+        if (transaction > -1000 && transaction < 1000) {
+            PKO.add(transaction);
         }
-        return saldoAll;
     }
 
-    public int getAllPayIns() {
-        int allPayIns = 0;
-        for (int i = 0; i < banks.length; i++) {
-            allPayIns = allPayIns + banks[i].getPayIns();
+    public void addParibasTransactions(int transaction) {
+        if (transaction > -1000 && transaction < 1000) {
+            Paribas.add(transaction);
         }
-        return allPayIns;
     }
 
-    public int getAllPayOuts() {
-        int allPayOuts = 0;
-        for (int i = 0; i < banks.length; i++) {
-            allPayOuts = allPayOuts + banks[i].getPayOuts();
+    public void addNordeaTransactions(int transaction) {
+        if (transaction > -1000 && transaction < 1000) {
+            Nordea.add(transaction);
         }
-        return allPayOuts;
+    }
+
+    public int getAllSaldo() {
+        int saldo = 0;
+        for (int i = 0; i < banks.length; i++) {
+            saldo = saldo + banks[i].getSaldo();
+        }
+        return saldo;
     }
 
     public double getAllAveragePayIns() {
         double averagePayIns = 0;
-        double sum = 0;
-        for (int i = 0; i < banks.length; i++) {
-            sum = sum + banks[i].getPayIns();
-            averagePayIns = sum / banks.length;
+        for(int i = 0; i < banks.length;i++){
+            averagePayIns = averagePayIns + banks[i].getPayIns();
+
         }
-        return averagePayIns;
+        return averagePayIns / banks.length;
     }
 
     public double getAllAveragePayOuts() {
         double averagePayOuts = 0;
-        double sum = 0;
         for (int i = 0; i < banks.length; i++) {
-            sum = sum + banks[i].getPayOuts();
-            averagePayOuts = sum / banks.length;
+            averagePayOuts = averagePayOuts + banks[i].getPayOuts();
         }
-        return averagePayOuts;
+        return averagePayOuts / banks.length;
+    }
+
+    public int getAllPayOutsNumber() {
+        int sum = 0;
+        for(int i = 0; i < banks.length; i++){
+            sum = sum + banks[i].getNumberOfPayOuts();
+            }
+        return sum;
+    }
+
+    public int getAllPayInsNumber() {
+        int sum = 0;
+        for(int i = 0; i < banks.length; i++){
+            sum = sum + banks[i].getNumberOfPayIns();
+        }
+        return sum;
     }
 }
