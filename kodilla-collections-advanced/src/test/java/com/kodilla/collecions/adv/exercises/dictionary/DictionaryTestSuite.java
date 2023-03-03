@@ -35,7 +35,10 @@ public class DictionaryTestSuite {
         List<EnglishWord> result = dictionary.findEnglishWords("gra");
 
         //then
-        assertEquals(2, result.size());
+        List<EnglishWord> expectedList = new ArrayList<>();
+        expectedList.add(new EnglishWord(PartOfSpeech.NOUN, "game"));
+        expectedList.add(new EnglishWord(PartOfSpeech.NOUN, "play"));
+        assertEquals(expectedList,result);
     }
 
     @Test

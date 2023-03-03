@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class EnglishWord {
     private PartOfSpeech partOfSpeech;
+
     private String word;
 
     public EnglishWord(PartOfSpeech partOfSpeech, String word) {

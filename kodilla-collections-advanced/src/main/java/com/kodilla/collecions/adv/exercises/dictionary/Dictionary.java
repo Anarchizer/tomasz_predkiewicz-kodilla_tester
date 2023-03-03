@@ -19,8 +19,8 @@ public class Dictionary {
     public List<EnglishWord> findEnglishWords(String polishWord, PartOfSpeech partOfSpeech){
         List<EnglishWord> result = new ArrayList<>();
         for(EnglishWord englishWord : dictionary.getOrDefault(polishWord, Collections.emptyList())){
-        if(englishWord.getPartOfSpeech().equals(partOfSpeech)){
-        result.add(englishWord);}
+            if(englishWord.getPartOfSpeech().equals(partOfSpeech)){
+                result.add(englishWord);}
         }
         return result;
     }
