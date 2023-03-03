@@ -1,17 +1,14 @@
 package com.kodilla.test;
 
 import com.kodilla.stream.User;
-import com.kodilla.stream.UsersRepository;
-import com.kodilla.stream.homework.ForumStats;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ForumTestSuite {
+public class ForumStatsTestSuite {
 
     @Test
     public void shouldGetAverageNumberOfPostsForUsersEqualOrAboveFortyYearsOld() {
