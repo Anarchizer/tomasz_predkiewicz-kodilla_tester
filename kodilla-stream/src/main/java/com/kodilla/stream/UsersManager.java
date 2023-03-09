@@ -7,17 +7,17 @@ import java.util.stream.Collectors;
 public class UsersManager {
     public void main(String[] args) {
 
-        List<String> usernames = filterChemistGroupUsernames();
+        List<String> usernames = filterChemistGroupUserNames();
         System.out.println(usernames);
 
-        List<String> userByAges = filterUsersByAge(35);
+        List<User> userByAges = filterUsersByAge(35);
         System.out.println(userByAges);
 
-        List<String> name = filterUsersByNameWithException("Walter White");
+        List<User> name = filterUsersWithZeroPosts();
         System.out.println(name);
     }
 
-    private List<String> filterChemistGroupUsernames() {
+    public static List<String> filterChemistGroupUserNames() {
         List<String> usernames = UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getGroup().equals("Chemists"))
@@ -26,20 +26,20 @@ public class UsersManager {
         return usernames;
     }
 
-    private List<String> filterUsersByAge(int age) {
-        List<String> ages = UsersRepository.getUsersList()
+    public static List<User> filterUsersByAge(int age) {
+        List<User> ages = UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getAge() > age)
-                .map(UsersManager::getUserName)
+                .map(UsersManager::getUser)
                 .collect(Collectors.toList());
         return ages;
     }
 
-    private List<String> filterUsersByNameWithException(String name) {
-        List<String> names = UsersRepository.getUsersList()
+    public static List<User> filterUsersWithZeroPosts() {
+        List<User> names = UsersRepository.getUsersList()
                 .stream()
-                .filter(user -> user.getNumberOfPost() == 7 || user.getUsername().equals(name))
-                .map(User::getUsername)
+                .filter(user -> user.getNumberOfPost() == 0 )
+                .map(UsersManager::getUser)
                 .collect(Collectors.toList());
         return names;
     }

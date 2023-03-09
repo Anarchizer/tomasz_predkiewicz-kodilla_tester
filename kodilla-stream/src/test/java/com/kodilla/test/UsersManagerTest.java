@@ -14,33 +14,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class UsersManagerTest {
 
     @Test
-    public void checkIfReturnsChemistUsernames(){
-        List<String> users = new ArrayList<>();
-        users.add("Walter White");
-        users.add("Gale Boetticher");
+    public void checkIfFiltersChemistGroupUsernames() {
+        List<String> usernames = UsersManager.filterChemistGroupUserNames();
+        List<String> expectedUsernames = new ArrayList<>();
+        expectedUsernames.add("Walter White");
+        expectedUsernames.add("Gale Boetticher");
 
-        List<String> usernames = UsersRepository.getUsersList()
-                .stream()
-                .filter(user -> user.getGroup().equals("Chemists"))
-                .map(UsersManager::getUserName)
-                .collect(Collectors.toList());
-
-        assertEquals(users, usernames);
+        assertEquals(usernames, expectedUsernames);
     }
-
     @Test
-    public void checkIfReturnsObjectsWithAgeAboveGivenAndSize(){
-        int age = 35;
-        List<User> ages = UsersRepository.getUsersList()
-                .stream()
-                .filter(user -> user.getAge() > age)
-                .map(UsersManager::getUser)
-                .collect(Collectors.toList());
+    public void checkIfFiltersUsersByAge(){
+        List<User> ages = UsersManager.filterUsersByAge(45);
 
         List<User> users = new ArrayList<>();
         users.add(new User("Walter White", 50, 7, "Chemists"));
         users.add(new User("Gus Firing", 49, 0, "Board"));
-        users.add(new User("Gale Boetticher", 44, 2, "Chemists"));
         users.add(new User("Mike Ehrmantraut", 57, 0, "Security"));
 
         assertEquals(ages, users);
@@ -48,19 +36,14 @@ public class UsersManagerTest {
     }
 
     @Test
-    public void checkIfReturnsStringWithGivenNameOrNumberOfPostEqualsSeven(){
-        String name = "Mike Ehrmantraut";
-        List<String> names = UsersRepository.getUsersList()
-                .stream()
-                .filter(user -> user.getNumberOfPost() == 7||user.getUsername().equals(name))
-                .map(User::getUsername)
-                .collect(Collectors.toList());
+    public void checkIfReturnsUsersWithZeroPosts(){
+        List<User> actual = UsersManager.filterUsersWithZeroPosts();
 
-        List<String> users = new ArrayList<>();
-        users.add(new String("Walter White"));
-        users.add(new String("Mike Ehrmantraut"));
+        List<User> expected = new ArrayList<>();
+        expected.add(new User("Gus Firing", 49, 0, "Board"));
+        expected.add(new User("Mike Ehrmantraut", 57, 0, "Security"));
 
-        assertEquals(names, users);
-        assertEquals(names.size(), users.size());
+        assertEquals(expected, actual);
+        assertEquals(expected.size(), actual.size());
     }
 }
