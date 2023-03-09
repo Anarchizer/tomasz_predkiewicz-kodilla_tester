@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 
 public class UsersManager {
-    public static void main(String[] args) {
+    public void main(String[] args) {
 
         List<String> usernames = filterChemistGroupUsernames();
         System.out.println(usernames);
@@ -17,7 +17,7 @@ public class UsersManager {
         System.out.println(name);
     }
 
-    private static List<String> filterChemistGroupUsernames() {
+    private List<String> filterChemistGroupUsernames() {
         List<String> usernames = UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getGroup().equals("Chemists"))
@@ -26,7 +26,7 @@ public class UsersManager {
         return usernames;
     }
 
-    private static List<String> filterUsersByAge(int age) {
+    private List<String> filterUsersByAge(int age) {
         List<String> ages = UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getAge() > age)
@@ -35,7 +35,7 @@ public class UsersManager {
         return ages;
     }
 
-    private static List<String> filterUsersByNameWithException(String name) {
+    private List<String> filterUsersByNameWithException(String name) {
         List<String> names = UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getNumberOfPost() == 7 || user.getUsername().equals(name))

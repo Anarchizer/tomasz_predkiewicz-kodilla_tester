@@ -16,11 +16,16 @@ public class Application {
         lista.add(new Student("Weronika Kwiatek", null));
         lista.add(new Student("Diana Ambrożczyk", new Teacher("Wojciech Kowalski")));
 
+    }
+
+    public void displayResult(List<Student> lista){
+
         for (Student student : lista) {
 
             Optional<Student> optionalList = Optional.of(student);
-            if (optionalList.get().getTeacher() == null) {
-                System.out.println(" Uczeń: " + student.getName() + " Nauczyciel: " + "<Undefined>");
+            if (optionalList.get().getTeacher().getName() == null) {
+                String name = "<Undefined>";
+                System.out.println(" Uczeń: " + student.getName() + " Nauczyciel: " + name);
             } else {
                 System.out.println(" Uczeń: " + student.name + " Nauczyciel: " + optionalList.get().getTeacher().name);
             }

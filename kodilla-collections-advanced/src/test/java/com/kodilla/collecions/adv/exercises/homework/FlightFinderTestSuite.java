@@ -11,10 +11,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class FlightFinderTestSuite {
 
     private FlightFinder flightFinder;
+    private List<Flight> list;
 
     @BeforeEach
     public void setUp() {
         flightFinder = new FlightFinder();
+        list = new ArrayList<>();
     }
 
     @Test
@@ -30,12 +32,8 @@ class FlightFinderTestSuite {
     public void checkIfDeparturesMatchProperArrivals(){
         flightFinder.findFlightsFrom("Ottawa");
 
-        Flight flight1 = new Flight("Ottawa", "Memphis");
-        Flight flight2 = new Flight("Ottawa", "Waszyngton");
-
-        List<Flight> list = new ArrayList<>();
-        list.add(flight1);
-        list.add(flight2);
+        list.add(new Flight("Ottawa", "Memphis"));
+        list.add(new Flight("Ottawa", "Waszyngton"));
 
         assertEquals(flightFinder.findFlightsFrom("Ottawa"), list);
     }
@@ -44,12 +42,8 @@ class FlightFinderTestSuite {
     public void checkIfArrivalsMatchProperDepartures(){
         flightFinder.findFlightsTo("Memphis");
 
-        Flight flight1 = new Flight("Toronto", "Memphis");
-        Flight flight2 = new Flight("Ottawa", "Memphis");
-
-        List<Flight> list = new ArrayList<>();
-        list.add(flight1);
-        list.add(flight2);
+        list.add(new Flight("Toronto", "Memphis"));
+        list.add(new Flight("Ottawa", "Memphis"));
 
         assertEquals(flightFinder.findFlightsTo("Memphis"), list);
     }

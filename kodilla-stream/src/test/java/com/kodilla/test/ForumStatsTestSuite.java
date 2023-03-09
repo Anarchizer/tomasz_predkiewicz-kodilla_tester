@@ -1,6 +1,8 @@
 package com.kodilla.test;
 
 import com.kodilla.stream.User;
+import com.kodilla.stream.UsersRepository;
+import com.kodilla.stream.homework.ForumStats;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -48,6 +50,8 @@ public class ForumStatsTestSuite {
                 .mapToDouble(n -> n.getNumberOfPost())
                 .average()
                 .getAsDouble();
+
+        ForumStats forumStats = new ForumStats();
 
         assertEquals(107, avg);
     }

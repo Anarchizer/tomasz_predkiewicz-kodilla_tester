@@ -43,24 +43,24 @@ public class UsersManagerTest {
         users.add(new User("Gale Boetticher", 44, 2, "Chemists"));
         users.add(new User("Mike Ehrmantraut", 57, 0, "Security"));
 
-            assertEquals(ages, users);
-            assertEquals(ages.size(), users.size());
-        }
+        assertEquals(ages, users);
+        assertEquals(ages.size(), users.size());
+    }
 
-        @Test
+    @Test
     public void checkIfReturnsStringWithGivenNameOrNumberOfPostEqualsSeven(){
         String name = "Mike Ehrmantraut";
-            List<String> names = UsersRepository.getUsersList()
-                    .stream()
-                    .filter(user -> user.getNumberOfPost() == 7||user.getUsername().equals(name))
-                    .map(User::getUsername)
-                    .collect(Collectors.toList());
+        List<String> names = UsersRepository.getUsersList()
+                .stream()
+                .filter(user -> user.getNumberOfPost() == 7||user.getUsername().equals(name))
+                .map(User::getUsername)
+                .collect(Collectors.toList());
 
-            List<String> users = new ArrayList<>();
-            users.add(new String("Walter White"));
-            users.add(new String("Mike Ehrmantraut"));
+        List<String> users = new ArrayList<>();
+        users.add(new String("Walter White"));
+        users.add(new String("Mike Ehrmantraut"));
 
-            assertEquals(names, users);
-            assertEquals(names.size(), users.size());
-        }
+        assertEquals(names, users);
+        assertEquals(names.size(), users.size());
     }
+}
