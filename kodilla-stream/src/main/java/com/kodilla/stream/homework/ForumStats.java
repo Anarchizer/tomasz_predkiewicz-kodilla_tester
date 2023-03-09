@@ -15,26 +15,21 @@ public class ForumStats {
     }
 
 
-    private static double getAverageNoOfPostsForAboveAndEqualForty(List<User> users) {
-        double avg = users
+    public static double getAverageNoOfPostsForAboveAndEqualForty(List<User> users) {
+        return users
                 .stream()
                 .filter(n -> n.getAge() >= 40)
                 .mapToDouble(n -> n.getNumberOfPost())
                 .average()
                 .getAsDouble();
-
-        return avg;
     }
 
-    private static double getAverageNoOfPostsForLessThanForty(List<User> users) {
-        double avg = users
+    public static double getAverageNoOfPostsForLessThanForty(List<User> users) {
+        return users
                 .stream()
                 .filter(n -> n.getAge() < 40)
                 .mapToDouble(n -> n.getNumberOfPost())
                 .average()
                 .getAsDouble();
-
-        return avg;
     }
-
 }
